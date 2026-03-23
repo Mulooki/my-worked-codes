@@ -1,0 +1,30 @@
+CREATE DATABASE evoting;
+USE evoting;
+
+CREATE TABLE students (
+id INT AUTO_INCREMENT PRIMARY KEY,
+student_id VARCHAR(50) UNIQUE,
+name VARCHAR(100),
+class VARCHAR(50),
+password VARCHAR(255),
+has_voted TINYINT DEFAULT 0
+);
+
+CREATE TABLE candidates (
+id INT AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(100),
+position VARCHAR(50),
+photo VARCHAR(255)
+);
+
+CREATE TABLE votes (
+id INT AUTO_INCREMENT PRIMARY KEY,
+student_id INT,
+candidate_id INT
+);
+
+CREATE TABLE admin (
+id INT AUTO_INCREMENT PRIMARY KEY,
+username VARCHAR(50),
+password VARCHAR(255)
+);
